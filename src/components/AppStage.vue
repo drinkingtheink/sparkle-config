@@ -23,6 +23,8 @@
           v-model="medStarDelay"
         />
         <span class="value-display"> {{  medStarDelay }}s</span>
+
+        <div class="arrow-left"></div>
       </div>
 
       <div class="sml-star-input input-container" >
@@ -36,6 +38,8 @@
           v-model="smlStarDelay"
         />
         <span class="value-display"> {{  smlStarDelay }}s</span>
+
+        <div class="arrow-left"></div>
       </div>
 
       <div class="lrg-star-input input-container" >
@@ -49,6 +53,8 @@
           v-model="lrgStarDelay"
         />
         <span class="value-display"> {{ lrgStarDelay }}s</span>
+
+        <div class="arrow-right"></div>
       </div>
     </section>
 
@@ -63,6 +69,8 @@
         v-model="animationDuration"
       />
       <span class="value-display"> {{  animationDuration }}s</span>
+
+      <div class="arrow-up"></div>
     </div>
   
     <section class="controls" >
@@ -221,6 +229,8 @@ export default {
 <style>
 :root {
     --blue: #17a5ff;
+    --bgGrad: rgba(0,0,0,0.8);
+    --arrowDim: 25px;
 }
 
 h3 {
@@ -282,6 +292,7 @@ label,
   width: 200px;
   margin: 0 auto;
   margin-top: 1rem;
+  position: relative;
 }
 
 .code-output {
@@ -354,5 +365,40 @@ button:hover {
 
 .download-css.success:hover {
   color: white;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: var(--arrowDim) solid transparent;
+  border-right: var(--arrowDim) solid transparent;
+  
+  border-bottom: var(--arrowDim) solid var(--bgGrad);
+  top: -25px;
+  position: absolute;
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: var(--arrowDim) solid transparent;
+  border-bottom: var(--arrowDim) solid transparent;
+  
+  border-left: var(--arrowDim) solid var(--bgGrad);
+  position: absolute;
+  right: -25px;
+  top: 10px;
+}
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: var(--arrowDim) solid transparent;
+  border-bottom: var(--arrowDim) solid transparent; 
+  
+  border-right:var(--arrowDim) solid var(--bgGrad); 
+  position: absolute;
+  left: -25px;
+  top: 10px;
 }
 </style>
