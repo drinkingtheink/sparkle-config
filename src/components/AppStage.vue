@@ -88,7 +88,6 @@
             #sml-star {
                 animation-name: twinkle;
                 animation-duration: {{ animationDuration }}s;
-                animation-delay: 0s;
                 animation-iteration-count: infinite;
                 transform-origin: center;
             }
