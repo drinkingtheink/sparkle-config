@@ -162,6 +162,11 @@ export default {
     copyCSS() {
       // Find the code element
       const codeElement = document.querySelector('.code-output code');
+      const cssProps = `
+:root {
+    --bluefill: #17a5ff;
+}
+      `
       const keyframes = `
 @keyframes twinkle {
   0% {
@@ -192,7 +197,7 @@ export default {
       }
       
       // Get the text content
-      const codeText = keyframes + codeElement.textContent.trim();
+      const codeText = cssProps + keyframes + codeElement.textContent.trim();
       console.log(`COPIED TO CLIPBOARD >>>>>`);
       console.log(`${codeText}`);
       // Use the Clipboard API to copy the text
